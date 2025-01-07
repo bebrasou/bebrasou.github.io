@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Расписание</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div id="roblox">
+            <div class="rectangle"></div>
+            <div id="clock">
+                <h4>Загружается...</h4>
+            </div>
+        </div>
+        <div class="container">
+            <div id="ponedelnik">
+                <h2>Понедельник</h2>
+                <table class="schedule">
+                    <tr id="inforow">
+                        <td>№</td>
+                        <td>Урок</td>
+                        <td>Время</td>
+                        <td>Д/з</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Хімія</td>
+                        <td>09:00 - 09:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Алгебра</td>
+                        <td>09:55 - 10:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Всесвітня Історія</td>
+                        <td>10:50 - 11:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Фіз-ра</td>
+                        <td>12:00 - 12:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Фізика</td>
+                        <td>12:55 - 13:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Інформатика</td>
+                        <td>13:50 - 14:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="vtornik">
+                <h2>Вторник</h2>
+                <table class="schedule">
+                    <tr id="inforow">
+                        <td>№</td>
+                        <td>Урок</td>
+                        <td>Время</td>
+                        <td>Д/з</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Геометрія</td>
+                        <td>09:00 - 09:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Історія України</td>
+                        <td>09:55 - 10:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Фіз-ра</td>
+                        <td>10:50 - 11:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Фізика</td>
+                        <td>12:00 - 12:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>5</td>
+                        <td>Алгебра</td>
+                        <td>12:55 - 13:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Мистецтво</td>
+                        <td>13:50 - 14:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Основи здоров’я</td>
+                        <td>14:45 - 15:30</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="sreda">
+                <h2>Среда</h2>
+                <table class="schedule">
+                    <tr id="inforow">
+                        <td>№</td>
+                        <td>Урок</td>
+                        <td>Время</td>
+                        <td>Д/з</td>
+                    </tr>
+                    <tr id="nonerow">
+                        <td>1</td>
+                        <td>-</td>
+                        <td>9:00 - 9:45</td>
+                        <td>-</td>
+                    </tr>
+                    <tr id="nonerow">
+                        <td>2</td>
+                        <td>-</td>
+                        <td>9:55 - 10:40</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Зар. літ</td>
+                        <td>10:50 - 11:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>4</td>
+                        <td>Географія/Історія</td>
+                        <td>12:00 - 12:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>5</td>
+                        <td>Фіз-ра</td>
+                        <td>12:55 - 13:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Англійська</td>
+                        <td>13:50 - 14:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Укр. мова</td>
+                        <td>14:45 - 15:30</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Укр. літ</td>
+                        <td>15:40 - 16:25</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="chetverg">
+                <h2>Четверг</h2>
+                <table class="schedule">
+                    <tr id="inforow">
+                        <td>№</td>
+                        <td>Урок</td>
+                        <td>Время</td>
+                        <td>Д/з</td>
+                    </tr>
+                    <tr id="nonerow">
+                        <td>1</td>
+                        <td>-</td>
+                        <td>9:00 - 9:45</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Англійська</td>
+                        <td>09:55 - 10:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>3</td>
+                        <td>Геометрія</td>
+                        <td>10:50 - 11:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="nonerow">
+                        <td>4</td>
+                        <td>-</td>
+                        <td>12:00 - 12:45</td>
+                        <td>-</td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>5</td>
+                        <td>Зар. літ</td>
+                        <td>12:55 - 13:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Фізика</td>
+                        <td>13:50 - 14:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Труди</td>
+                        <td>14:45 - 15:30</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>8</td>
+                        <td>Укр. мова</td>
+                        <td>15:40 - 16:25</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>9</td>
+                        <td>Укр. літ</td>
+                        <td>16:35 - 17:20</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="pyatnica">
+                <h2>Пятница</h2>
+                <table class="schedule">
+                    <tr id="inforow">
+                        <td>№</td>
+                        <td>Урок</td>
+                        <td>Время</td>
+                        <td>Д/з</td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>1</td>
+                        <td>Інформатика</td>
+                        <td>09:00 - 09:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Правознавство</td>
+                        <td>09:55 - 10:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>3</td>
+                        <td>Англійська</td>
+                        <td>10:50 - 11:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Географія</td>
+                        <td>12:00 - 12:45</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>5</td>
+                        <td>Хімія</td>
+                        <td>12:55 - 13:40</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>6</td>
+                        <td>Біологія</td>
+                        <td>13:50 - 14:35</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                    <tr id="asyncrow">
+                        <td>7</td>
+                        <td>Фізика</td>
+                        <td>14:45 - 15:30</td>
+                        <td>
+                            <input type="checkbox" name="himiya" id="himiya1" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

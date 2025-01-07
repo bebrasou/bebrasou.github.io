@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgb(255, 239, 204);
+    color: black;
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1500px;
+    margin-top: 7%;
+}
+
+table {
+    flex: 1 1 calc(50% - 20px); /* Два элемента в строке */
+    max-width: calc(50% - 20px);
+    background-color: green;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 3px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.full-width {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+td,
+th {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#inforow {
+    background-color: rgb(166, 166, 166);
+    font-weight: bold;
+}
+
+#nonerow {
+    background-color: black;
+    color: white;
+}
+
+#asyncrow {
+    background-color: rgb(255, 0, 0);
+}
+
+tr.highlight {
+    background-color: blue;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    table {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+#clock {
+    position: fixed;
+    color: black;
+    font-weight: bold;
+    padding: 1% 35%;
+}
+
+.rectangle {
+    position: fixed;
+    height: 6%;
+    width: 2000px;
+    background-color: rgb(255, 239, 204);
+    border-bottom: 2px solid black;
+}
+
+#roblox {
+    top: 0%;
+    position: absolute;
+    width: 100.5%;
+    text-align: center;
+    border: 1px solid black;
+    z-index: 100000;
+}
+
+.switch {
+    position: fixed;
+    display: inline-block;
+    width: 6.5rem;
+    height: 3.5rem;
+    z-index: 1000000;
+}
+
+.switch input {
+    opacity: 1;
+    width: 0;
+}
