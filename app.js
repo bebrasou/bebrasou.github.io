@@ -59,6 +59,18 @@ function blur() {
     }
 }
 
+function dz() {
+    const rows = document.querySelectorAll(".container tr");
+    rows.forEach((row) => {
+        const checkbox = row.querySelector('input[type="checkbox"]');
+        if (checkbox && !checkbox.checked) {
+            row.classList.add("highlight");
+        } else {
+            row.classList.remove("highlight");
+        }
+    });
+}
+
 window.onload = function () {
     blur();
 };
