@@ -9,9 +9,12 @@
     </head>
     <body>
         <div id="roblox">
-            <div>
+            <div id="urok">
+                <h6>След. урок</h3>
+            </div>
+            <div id="sw">
                 <label class="switch">
-                    <input type="checkbox" />
+                    <input type="checkbox" onclick="dz()" on/>
                     <span class="move"></span>
                 </label>
             </div>
@@ -35,7 +38,7 @@
                         <td>Хімія</td>
                         <td>09:00 - 09:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="хімпон" id="хімпон1" />
                         </td>
                     </tr>
                     <tr>
@@ -43,7 +46,7 @@
                         <td>Алгебра</td>
                         <td>09:55 - 10:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="алгпон" id="алгпон1" />
                         </td>
                     </tr>
                     <tr>
@@ -51,7 +54,7 @@
                         <td>Всесвітня Історія</td>
                         <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="всепон" id="всепон1" />
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +62,7 @@
                         <td>Фіз-ра</td>
                         <td>12:00 - 12:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізпон" id="фізпон1" />
                         </td>
                     </tr>
                     <tr>
@@ -67,7 +70,7 @@
                         <td>Фізика</td>
                         <td>12:55 - 13:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізпон2" id="фізпон2" />
                         </td>
                     </tr>
                     <tr>
@@ -75,7 +78,7 @@
                         <td>Інформатика</td>
                         <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="інфпон" id="інфпон1" />
                         </td>
                     </tr>
                 </table>
@@ -94,7 +97,7 @@
                         <td>Геометрія</td>
                         <td>09:00 - 09:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="геовто" id="геовто1" />
                         </td>
                     </tr>
                     <tr>
@@ -102,7 +105,7 @@
                         <td>Історія України</td>
                         <td>09:55 - 10:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="іствто" id="іствто1" />
                         </td>
                     </tr>
                     <tr>
@@ -110,7 +113,7 @@
                         <td>Фіз-ра</td>
                         <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізвто" id="фізвто1" />
                         </td>
                     </tr>
                     <tr>
@@ -118,7 +121,7 @@
                         <td>Фізика</td>
                         <td>12:00 - 12:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізвто2" id="фізвто2" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -126,7 +129,7 @@
                         <td>Алгебра</td>
                         <td>12:55 - 13:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="алгвто" id="алгвто1" />
                         </td>
                     </tr>
                     <tr>
@@ -134,7 +137,7 @@
                         <td>Мистецтво</td>
                         <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="мисвто" id="мисвто1" />
                         </td>
                     </tr>
                     <tr>
@@ -142,7 +145,7 @@
                         <td>Основи здоров’я</td>
                         <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="оснвто" id="оснвто1" />
                         </td>
                     </tr>
                 </table>
@@ -173,7 +176,7 @@
                         <td>Зар. літ</td>
                         <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="зарсре" id="зарсре1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -181,7 +184,7 @@
                         <td>Географія/Історія</td>
                         <td>12:00 - 12:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="геосре" id="геосре1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -189,7 +192,7 @@
                         <td>Фіз-ра</td>
                         <td>12:55 - 13:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізсре" id="фізсре1" />
                         </td>
                     </tr>
                     <tr>
@@ -197,7 +200,7 @@
                         <td>Англійська</td>
                         <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="ангсре" id="ангсре1" />
                         </td>
                     </tr>
                     <tr>
@@ -205,7 +208,7 @@
                         <td>Укр. мова</td>
                         <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="укрсре" id="укрсре1" />
                         </td>
                     </tr>
                     <tr>
@@ -213,7 +216,7 @@
                         <td>Укр. літ</td>
                         <td>15:40 - 16:25</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="укрсре2" id="укрсре2" />
                         </td>
                     </tr>
                 </table>
@@ -238,7 +241,7 @@
                         <td>Англійська</td>
                         <td>09:55 - 10:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="ангчет" id="ангчет1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -246,7 +249,7 @@
                         <td>Геометрія</td>
                         <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="геочет" id="геочет1" />
                         </td>
                     </tr>
                     <tr id="nonerow">
@@ -260,7 +263,7 @@
                         <td>Зар. літ</td>
                         <td>12:55 - 13:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="зарчет" id="зарчет1" />
                         </td>
                     </tr>
                     <tr>
@@ -268,7 +271,7 @@
                         <td>Фізика</td>
                         <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізчет" id="фізчет1" />
                         </td>
                     </tr>
                     <tr>
@@ -276,7 +279,7 @@
                         <td>Труди</td>
                         <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="тручет" id="тручет1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -284,7 +287,7 @@
                         <td>Укр. мова</td>
                         <td>15:40 - 16:25</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="укрчет" id="укрчет1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -292,7 +295,7 @@
                         <td>Укр. літ</td>
                         <td>16:35 - 17:20</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="укрчет2" id="укрчет2" />
                         </td>
                     </tr>
                 </table>
@@ -311,7 +314,7 @@
                         <td>Інформатика</td>
                         <td>09:00 - 09:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="інфпят" id="інфпят1" />
                         </td>
                     </tr>
                     <tr>
@@ -319,7 +322,7 @@
                         <td>Правознавство</td>
                         <td>09:55 - 10:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="правпят" id="правпят1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -327,7 +330,7 @@
                         <td>Англійська</td>
                         <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="ангпят" id="ангпят1" />
                         </td>
                     </tr>
                     <tr>
@@ -335,7 +338,7 @@
                         <td>Географія</td>
                         <td>12:00 - 12:45</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="геопят" id="геопят1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -343,7 +346,7 @@
                         <td>Хімія</td>
                         <td>12:55 - 13:40</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="хімпят" id="хімпят1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -351,7 +354,7 @@
                         <td>Біологія</td>
                         <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="біопят" id="біопят1" />
                         </td>
                     </tr>
                     <tr id="asyncrow">
@@ -359,7 +362,7 @@
                         <td>Фізика</td>
                         <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="himiya" id="himiya1" />
+                            <input type="checkbox" name="фізпят" id="фізпят1" />
                         </td>
                     </tr>
                 </table>

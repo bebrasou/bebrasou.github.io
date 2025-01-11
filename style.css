@@ -41,8 +41,9 @@ table {
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 20px;
-    border: 3px solid black;
-    border-radius: 8px;
+    border-color: black;
+    border-width: 20px;
+    border-radius: 9px;
     overflow: hidden;
 }
 
@@ -68,12 +69,12 @@ th {
     color: white;
 }
 
-#asyncrow {
-    background-color: rgb(255, 0, 0);
+tr.highlight {
+    background-color: blue !important;
 }
 
-tr.highlight {
-    background-color: blue;
+#asyncrow {
+    background-color: rgb(255, 0, 0);
 }
 
 img {
@@ -114,12 +115,64 @@ img {
 .switch {
     position: fixed;
     display: inline-block;
-    width: 6.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 1.3rem;
     z-index: 1000000;
 }
 
 .switch input {
     opacity: 1;
     width: 0;
+    height: 0;
+}
+
+.move {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border-radius: 3.5rem;
+    border: 0.1rem solid #ddd;
+    transition: 0.3s;
+}
+
+.move::before {
+    position: absolute;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1.5rem;
+    top: 0;
+    bottom: 0;
+    left: 0.12rem;
+    box-shadow: 0 0.1rem 0.1rem grey;
+    background: white;
+    transition: 0.4s;
+}
+
+input:checked + .move {
+    background: blue;
+    border: 0.1rem solid transparent;
+}
+
+input:checked + .move::before {
+    transform: translateX(1.65rem);
+}
+
+#sw {
+    position: fixed;
+    padding: 3% 73%;
+    z-index: 999999999;
+}
+
+.schedule {
+    border-color: black;
+}
+
+#urok {
+    position: fixed;
+    padding: 1% 11%;
+    z-index: 999999;
 }

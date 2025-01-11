@@ -60,15 +60,23 @@ function blur() {
 }
 
 function dz() {
+    const switchCheckbox = document.querySelector('.switch input[type="checkbox"]');
     const rows = document.querySelectorAll(".container tr");
-    rows.forEach((row) => {
-        const checkbox = row.querySelector('input[type="checkbox"]');
-        if (checkbox && !checkbox.checked) {
-            row.classList.add("highlight");
-        } else {
+
+    if (switchCheckbox.checked) {
+        rows.forEach((row) => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox && !checkbox.checked) {
+                row.classList.add("highlight");
+            } else {
+                row.classList.remove("highlight");
+            }
+        });
+    } else {
+        rows.forEach((row) => {
             row.classList.remove("highlight");
-        }
-    });
+        });
+    }
 }
 
 window.onload = function () {
