@@ -173,6 +173,16 @@ input:checked + .move::before {
 
 #urok {
     position: fixed;
-    padding: 3% 11%;
+    padding: 2%;
+    left: 4.3%;
     z-index: 999999;
+}
+
+#urokname {
+    position: fixed;
+    padding: 6.2%;
+    left: 0;
+    z-index: 999999;
+    font-weight: bold;
+    font-size: 15px;
 }
