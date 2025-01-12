@@ -9,14 +9,16 @@ function clocknow() {
         "Воскресенье",
     ];
     let currentDate = new Date();
-    var hour = currentDate.getHours();
-    var min = currentDate.getMinutes();
-    var sec = currentDate.getSeconds();
-    var day = days[currentDate.getDay() - 1];
+    let hour = currentDate.getHours();
+    let min = currentDate.getMinutes();
+    let sec = currentDate.getSeconds();
+    let pi = currentDate.getDay() - 1;
+    if (pi === -1) pi = 6;
+    const day = days[pi];
     if (hour < 10) hour = "0" + hour;
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
-    var test = day + ", " + hour + ":" + min + ":" + sec;
+    var test = day + " " + hour + ":" + min + ":" + sec;
 
     const clock = document.getElementById("clock");
     clock.textContent = test;
@@ -27,8 +29,7 @@ setInterval(clocknow, 1000);
 
 function blur() {
     let currentDate = new Date();
-    var day = currentDate.getDay();
-    // Получение всех элементов по их id
+    const day = currentDate.getDay();
     const days = {
         1: document.getElementById("ponedelnik"), // Понедельник
         2: document.getElementById("vtornik"), // Вторник
@@ -79,6 +80,80 @@ function dz() {
     }
 }
 
+function sledurok() {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDay();
+    const currentHour = currentDate.getHours();
+    const currentMinute = currentDate.getMinutes();
+    let uroktime = 0;
+
+    if (currentHour < 9) uroktime = 1;
+    if (currentHour === 9 && currentMinute < 55) uroktime = 2;
+    if (currentHour === 9 && currentMinute > 55 || currentHour === 10 && currentMinute < 50) uroktime = 3;
+    if (currentHour === 10 && currentMinute > 50 || currentHour === 12 && currentMinute < 0) uroktime = 4;
+    if (currentHour === 12 && currentMinute > 0 || currentHour === 12 && currentMinute < 55) uroktime = 5;
+    if (currentHour === 12 && currentMinute > 55 || currentHour === 13 && currentMinute < 50) uroktime = 6;
+    if (currentHour === 13 && currentMinute > 50 || currentHour === 14 && currentMinute < 45) uroktime = 7;
+    if (currentHour === 14 && currentMinute > 45 || currentHour === 15 && currentMinute < 40) uroktime = 8;
+    if (currentHour === 15 && currentMinute > 40 || currentHour === 16 && currentMinute < 35) uroktime = 9;
+
+    const lessons = {
+        1: {
+            1: "Хімія 9:00",
+            2: "Алгебра 9:55",
+            3: "Всесвітня 10:50",
+            4: "Фіз-ра 12:00",
+            5: "Фізика 12:55",
+            6: "Інформатика 13:50",
+        },
+        2: {
+            1: "Геометрія 9:00",
+            2: "Іст. Укр 9:55",
+            3: "Фіз-ра 10:50",
+            4: "Фізика 12:00",
+            5: "Алгебра 12:55",
+            6: "Мистецтво 13:50",
+            7: "Осн. здор. 14:45",
+        },
+        3: {
+            1: "- 9:00",
+            2: "- 9:55",
+            3: "Зар. літ 10:50",
+            4: "Геогр/Іст 12:00",
+            5: "Фіз-ра 12:55",
+            6: "Англійська 13:50",
+            7: "Укр. мова 14:45",
+            8: "Укр. літ 15:40",
+        },
+        4: {
+            1: "- 9:00",
+            2: "Англійська 9:55",
+            3: "Геометрія 10:50",
+            4: "- 12:00",
+            5: "Зар. літ 12:55",
+            6: "Фізика 13:50",
+            7: "Труди 14:45",
+            8: "Укр. мова 15:40",
+            9: "Укр. літ 16:35",
+        },
+        5: {
+            1: "Інформатика 9:00",
+            2: "Правознав 9:55",
+            3: "Англійська 10:50",
+            4: "Географія 12:00",
+            5: "Хімія 12:55",
+            6: "Біологія 13:50",
+            7: "Фізика 14:45",
+        },
+    };
+
+    const currentLesson = lessons[currentDay] ? lessons[currentDay][uroktime] : "Нет уроков";
+    const lesson = document.getElementById("urokname");
+    lesson.textContent = currentLesson;
+}
+
+setInterval(sledurok, 60000);
+
 window.onload = function () {
-    blur();
+    blur(), sledurok(), clocknow();
 };

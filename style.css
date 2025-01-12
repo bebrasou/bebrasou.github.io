@@ -64,7 +64,7 @@ th {
     font-weight: bold;
 }
 
-#nonerow {
+.nonerow {
     background-color: black;
     color: white;
 }
@@ -73,7 +73,7 @@ tr.highlight {
     background-color: blue !important;
 }
 
-#asyncrow {
+.asyncrow {
     background-color: rgb(255, 0, 0);
 }
 
@@ -173,6 +173,6 @@ input:checked + .move::before {
 
 #urok {
     position: fixed;
-    padding: 1% 11%;
+    padding: 3% 11%;
     z-index: 999999;
 }
