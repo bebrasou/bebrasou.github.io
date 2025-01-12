@@ -1,2 +1,2 @@
 # bebrasou.github.io
-site, that i need for my convenience
+сайт, с расписанием с разными штучками-дрючками
