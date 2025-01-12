@@ -151,9 +151,33 @@ function sledurok() {
     const lesson = document.getElementById("urokname");
     lesson.textContent = currentLesson;
 }
-
 setInterval(sledurok, 60000);
 
+function smena() {
+    const startDate = new Date('2025-01-01'); // Укажите дату отсчета (ГГГГ-ММ-ДД)
+    const currentDate = new Date();
+    const rows1 = document.querySelectorAll(".container .smena1");
+    const rows2 = document.querySelectorAll(".container .smena2");
+
+    // Вычисляем количество недель, прошедших с момента startDate
+    const weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+
+    // Определяем значение (1 или 2) в зависимости от текущей недели
+    const value = (weeksPassed % 2 === 0) ? 1 : 2;
+
+    if (value === 1) {
+        rows1.forEach((row) => {
+            row.classList.add("smena");
+        });
+    }
+
+    if (value === 2) {
+        rows2.forEach((row) => {
+            row.classList.add("smena");
+        });
+    }
+}
+
 window.onload = function () {
-    blur(), sledurok(), clocknow();
+    blur(), sledurok(), clocknow(), smena();
 };
