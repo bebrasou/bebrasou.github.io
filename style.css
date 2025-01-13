@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -31,7 +30,9 @@ h2 {
 
 .container {
     padding: 20px;
-    display:grid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     max-width: max-content;
     justify-content: center;
     gap: 20px;
@@ -77,6 +78,10 @@ tr.highlight {
 
 tr.smena {
     background-color: red;
+}
+
+#hzrow {
+    background-color: rgb(255, 208, 0);
 }
 
 img {

@@ -20,7 +20,7 @@ function clocknow() {
     if (sec < 10) sec = "0" + sec;
     var test = day + " " + hour + ":" + min + ":" + sec;
 
-    const clock = document.getElementById("clock");
+    const clock = document.getElementById("clocknow");
     clock.textContent = test;
 
     console.log(clock.textContent);
@@ -38,30 +38,32 @@ function blur() {
         5: document.getElementById("pyatnica"), // Пятница
     };
 
-    // Если сегодня суббота (6) или воскресенье (0), убираем блюр со всех дней
+    // Если сегодня суббота (6) или воскресенье (0), то убираем порядок
     if (day === 0 || day === 6) {
         for (let key in days) {
             if (days[key]) {
-                days[key].style.filter = "none"; // Убираем блюр
+                days[key].style.order = "0"; // Убираем порядок
             }
         }
         return; // Прекращаем выполнение функции
     }
 
-    // Применяем фильтр ко всем дням, кроме текущего
+    // Применяем стили для дней недели
     for (let key in days) {
         if (days[key]) {
             if (parseInt(key) === day) {
-                days[key].style.filter = "none"; // Убираем блюр для текущего дня
+                days[key].style.order = "-1"; // Перемещаем текущий день в начало
             } else {
-                days[key].style.filter = "blur(1px)"; // Добавляем блюр для остальных дней
+                break; // Прекращаем выполнение цикла
             }
         }
     }
 }
 
 function dz() {
-    const switchCheckbox = document.querySelector('.switch input[type="checkbox"]');
+    const switchCheckbox = document.querySelector(
+        '.switch input[type="checkbox"]'
+    );
     const rows = document.querySelectorAll(".container tr");
 
     if (switchCheckbox.checked) {
@@ -81,29 +83,98 @@ function dz() {
 }
 
 function sledurok() {
-    const startDate = new Date('2025-01-01'); 
+    const startDate = new Date("2025-01-01");
     const currentDate = new Date();
-    const rows1 = document.querySelectorAll(".container .smena1");
-    const rows2 = document.querySelectorAll(".container .smena2");
 
-    const weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+    const weeksPassed = Math.floor(
+        (currentDate - startDate) / (7 * 24 * 60 * 60 * 1000)
+    );
 
-    const value = (weeksPassed % 2 === 0) ? 1 : 2;
+    const value = weeksPassed % 2 === 0 ? 1 : 2;
 
     const currentDay = currentDate.getDay();
     const currentHour = currentDate.getHours();
     const currentMinute = currentDate.getMinutes();
-    let uroktime = 0;
+    const currentSecond = currentDate.getSeconds();
+    let uroktime = 10;
 
     if (currentHour < 9) uroktime = 1;
     if (currentHour === 9 && currentMinute < 55) uroktime = 2;
-    if (currentHour === 9 && currentMinute > 55 || currentHour === 10 && currentMinute < 50) uroktime = 3;
-    if (currentHour === 10 && currentMinute > 50 || currentHour === 12 && currentMinute < 0) uroktime = 4;
-    if (currentHour === 12 && currentMinute > 0 || currentHour === 12 && currentMinute < 55) uroktime = 5;
-    if (currentHour === 12 && currentMinute > 55 || currentHour === 13 && currentMinute < 50) uroktime = 6;
-    if (currentHour === 13 && currentMinute > 50 || currentHour === 14 && currentMinute < 45) uroktime = 7;
-    if (currentHour === 14 && currentMinute > 45 || currentHour === 15 && currentMinute < 40) uroktime = 8;
-    if (currentHour === 15 && currentMinute > 40 || currentHour === 16 && currentMinute < 35) uroktime = 9;
+    if (
+        currentDay === 5 &&
+        currentHour === 9 &&
+        currentMinute < 55 &&
+        value === 1
+    )
+        uroktime = 4; // Правознавство
+    if (
+        (currentHour === 9 && currentMinute > 55) ||
+        (currentHour === 10 && currentMinute < 50)
+    )
+        uroktime = 3;
+    if (
+        (currentDay === 1 &&
+            currentHour === 9 &&
+            currentMinute > 55 &&
+            value === 2) ||
+        (currentDay === 1 &&
+            currentHour === 10 &&
+            currentMinute < 50 &&
+            value === 2)
+    )
+        uroktime = 4; // Всесвітня історія
+    if (
+        (currentHour === 10 && currentMinute > 50) ||
+        (currentHour === 11 && currentMinute < 59)
+    )
+        uroktime = 4;
+    if (
+        (currentHour === 12 && currentMinute > 0) ||
+        (currentHour === 12 && currentMinute < 55)
+    )
+        uroktime = 5;
+    if (
+        (currentHour === 12 && currentMinute > 55) ||
+        (currentHour === 13 && currentMinute < 50)
+    )
+        uroktime = 6;
+    if (
+        (currentDay === 2 &&
+            currentHour === 12 &&
+            currentMinute > 55 &&
+            value === 2) ||
+        (currentDay === 2 &&
+            currentHour === 13 &&
+            currentMinute < 50 &&
+            value === 2)
+    )
+        uroktime = 7;
+    if (
+        (currentHour === 13 && currentMinute > 50) ||
+        (currentHour === 14 && currentMinute < 45)
+    )
+        uroktime = 7;
+    if (
+        (currentDay === 2 &&
+            currentHour === 13 &&
+            currentMinute > 50 &&
+            value === 1) ||
+        (currentDay === 2 &&
+            currentHour === 14 &&
+            currentMinute < 45 &&
+            value === 1)
+    )
+        uroktime = 10;
+    if (
+        (currentHour === 14 && currentMinute > 45) ||
+        (currentHour === 15 && currentMinute < 40)
+    )
+        uroktime = 8;
+    if (
+        (currentHour === 15 && currentMinute > 40) ||
+        (currentHour === 16 && currentMinute < 35)
+    )
+        uroktime = 9;
 
     const lessons = {
         1: {
@@ -111,75 +182,228 @@ function sledurok() {
             2: "Алгебра 9:55",
             3: "Всесвітня 10:50",
             4: "Фіз-ра 12:00",
-            5: "Фізика 12:55",
-            6: "Інформатика 13:50",
+            5: "Біологія 12:55",
+            6: "Інформат 13:50",
         },
         2: {
             1: "Геометрія 9:00",
             2: "Іст. Укр 9:55",
             3: "Фіз-ра 10:50",
             4: "Фізика 12:00",
-            5: "Алгебра 12:55",
-            6: "Мистецтво 13:50",
+            5: "-",
+            6: "Мист. 13:50",
             7: "Осн. здор. 14:45",
         },
         3: {
-            1: "- 9:00",
-            2: "- 9:55",
+            1: "-",
+            2: "-",
             3: "Зар. літ 10:50",
-            4: "Геогр/Іст 12:00",
-            5: "Фіз-ра 12:55",
-            6: "Англійська 13:50",
+            4: "-",
+            5: "-",
+            6: "Англ 13:50",
             7: "Укр. мова 14:45",
             8: "Укр. літ 15:40",
         },
         4: {
-            1: "- 9:00",
-            2: "Англійська 9:55",
-            3: "Геометрія 10:50",
-            4: "- 12:00",
-            5: "Зар. літ 12:55",
+            1: "-",
+            2: "Англ 9:55",
+            3: "-",
+            4: "-",
+            5: "-",
             6: "Фізика 13:50",
             7: "Труди 14:45",
-            8: "Укр. мова 15:40",
-            9: "Укр. літ 16:35",
+            8: "-",
+            9: "-",
         },
         5: {
-            1: "Інформатика 9:00",
+            1: "-",
             2: "Правознав 9:55",
-            3: "Англійська 10:50",
+            3: "-",
             4: "Географія 12:00",
-            5: "Хімія 12:55",
-            6: "Біологія 13:50",
-            7: "Фізика 14:45",
+            5: "-",
+            6: "-",
+            7: "-",
         },
     };
 
-    const currentLesson = lessons[currentDay] ? lessons[currentDay][uroktime] : "Нет уроков";
+    let currentLesson = lessons[currentDay][uroktime];
+
     const lesson = document.getElementById("urokname");
-    lesson.textContent = currentLesson;
+    if (uroktime != 10) {
+        while (currentLesson === "-") {
+            uroktime++;
+            currentLesson = lessons[currentDay][uroktime]; // Update currentLesson
+        }
+        lesson.textContent = currentLesson;
+    } else {
+        lesson.textContent = "Уроки завтра!";
+    }
 }
 setInterval(sledurok, 1000);
 
+function otschet() {
+    const startDate = new Date("2025-01-01");
+    const currentDate = new Date();
+
+    const weeksPassed = Math.floor(
+        (currentDate - startDate) / (7 * 24 * 60 * 60 * 1000)
+    );
+
+    const value = weeksPassed % 2 === 0 ? 1 : 2;
+    const clock = document.getElementById("otschet");
+    const currentDay = currentDate.getDay();
+    const currentHour = currentDate.getHours();
+    const currentMinute = currentDate.getMinutes();
+
+    let uroktime = 10;
+
+    if (currentHour < 9) uroktime = 1;
+    if (currentHour === 9 && currentMinute < 55) uroktime = 2;
+    if (
+        currentDay === 5 &&
+        currentHour === 9 &&
+        currentMinute < 55 &&
+        value === 1
+    )
+        uroktime = 4; // Правознавство
+    if (
+        (currentHour === 9 && currentMinute > 55) ||
+        (currentHour === 10 && currentMinute < 50)
+    )
+        uroktime = 3;
+    if (
+        (currentDay === 1 &&
+            currentHour === 9 &&
+            currentMinute > 55 &&
+            value === 2) ||
+        (currentDay === 1 &&
+            currentHour === 10 &&
+            currentMinute < 50 &&
+            value === 2)
+    )
+        uroktime = 4; // Всесвітня історія
+    if (
+        (currentHour === 10 && currentMinute > 50) ||
+        (currentHour === 11 && currentMinute < 59)
+    )
+        uroktime = 4;
+    if (
+        (currentHour === 12 && currentMinute > 0) ||
+        (currentHour === 12 && currentMinute < 55)
+    )
+        uroktime = 5;
+    if (
+        (currentHour === 12 && currentMinute > 55) ||
+        (currentHour === 13 && currentMinute < 50)
+    )
+        uroktime = 6;
+    if (
+        (currentDay === 2 &&
+            currentHour === 12 &&
+            currentMinute > 55 &&
+            value === 2) ||
+        (currentDay === 2 &&
+            currentHour === 13 &&
+            currentMinute < 50 &&
+            value === 2)
+    )
+        uroktime = 7;
+    if (
+        (currentHour === 13 && currentMinute > 50) ||
+        (currentHour === 14 && currentMinute < 45)
+    )
+        uroktime = 7;
+    if (
+        (currentDay === 2 &&
+            currentHour === 13 &&
+            currentMinute > 50 &&
+            value === 1) ||
+        (currentDay === 2 &&
+            currentHour === 14 &&
+            currentMinute < 45 &&
+            value === 1)
+    )
+        uroktime = 10;
+    if (
+        (currentHour === 14 && currentMinute > 45) ||
+        (currentHour === 15 && currentMinute < 40)
+    )
+        uroktime = 8;
+    if (
+        (currentHour === 15 && currentMinute > 40) ||
+        (currentHour === 16 && currentMinute < 35)
+    )
+        uroktime = 9;
+
+    const time = {
+        1: "9:00:00",
+        2: "9:55:00",
+        3: "10:50:00",
+        4: "12:00:00",
+        5: "12:55:00",
+        6: "13:50:00",
+        7: "14:45:00",
+        8: "15:40:00",
+        9: "16:35:00",
+    };
+
+    const timeLeft = time[uroktime];
+
+    var deadline = `${currentDate.toDateString()} ${timeLeft} GMT+02:00`;
+
+    var t = Date.parse(deadline) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+    var ostav = `${hours}:${minutes}:${seconds}`;
+
+    if (uroktime !== 10) {
+        clock.textContent = ostav;
+        console.log(ostav);
+    } else {
+        clock.textContent = "Уроки завтра!";
+    }
+}
+setInterval(otschet, 1000);
+
+// Переключение видимости
+document.getElementById("clock").addEventListener("click", () => {
+    const clockNowElement = document.getElementById("clocknow");
+    const otschetElement = document.getElementById("otschet");
+
+    if (clockNowElement.style.display === "none") {
+        clockNowElement.style.display = "block";
+        otschetElement.style.display = "none";
+    } else {
+        clockNowElement.style.display = "none";
+        otschetElement.style.display = "block";
+        otschet(); // Запуск функции otschet
+    }
+});
 function smena() {
-    const startDate = new Date('2025-01-01'); 
+    const startDate = new Date("2025-01-01");
     const currentDate = new Date();
     const rows1 = document.querySelectorAll(".container .smena1");
     const rows2 = document.querySelectorAll(".container .smena2");
 
-    const weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+    const weeksPassed = Math.floor(
+        (currentDate - startDate) / (7 * 24 * 60 * 60 * 1000)
+    );
 
-    const value = (weeksPassed % 2 === 0) ? 1 : 2;
+    const value = weeksPassed % 2 === 0 ? 1 : 2;
 
     if (value === 1) {
         rows1.forEach((row) => {
             row.classList.add("smena");
+            document.getElementById("sre").textContent = "Історія";
         });
     }
 
     if (value === 2) {
         rows2.forEach((row) => {
             row.classList.add("smena");
+            document.getElementById("sre").textContent = "Географія";
         });
     }
 }
