@@ -81,7 +81,15 @@ function dz() {
 }
 
 function sledurok() {
+    const startDate = new Date('2025-01-01'); 
     const currentDate = new Date();
+    const rows1 = document.querySelectorAll(".container .smena1");
+    const rows2 = document.querySelectorAll(".container .smena2");
+
+    const weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+
+    const value = (weeksPassed % 2 === 0) ? 1 : 2;
+
     const currentDay = currentDate.getDay();
     const currentHour = currentDate.getHours();
     const currentMinute = currentDate.getMinutes();
@@ -151,18 +159,16 @@ function sledurok() {
     const lesson = document.getElementById("urokname");
     lesson.textContent = currentLesson;
 }
-setInterval(sledurok, 60000);
+setInterval(sledurok, 1000);
 
 function smena() {
-    const startDate = new Date('2025-01-01'); // Укажите дату отсчета (ГГГГ-ММ-ДД)
+    const startDate = new Date('2025-01-01'); 
     const currentDate = new Date();
     const rows1 = document.querySelectorAll(".container .smena1");
     const rows2 = document.querySelectorAll(".container .smena2");
 
-    // Вычисляем количество недель, прошедших с момента startDate
     const weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
 
-    // Определяем значение (1 или 2) в зависимости от текущей недели
     const value = (weeksPassed % 2 === 0) ? 1 : 2;
 
     if (value === 1) {
