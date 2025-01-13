@@ -27,11 +27,9 @@ h2 {
 
 .container {
     padding: 20px;
-    display: grid;
+    display:grid;
     justify-content: center;
     gap: 20px;
-    width: 100%;
-    max-width: 1500px;
     margin-top: 7%;
 }
 
@@ -73,7 +71,7 @@ tr.highlight {
 }
 
 tr.smena {
-    background-color: red !important;
+    background-color: red;
 }
 
 img {
@@ -95,6 +93,7 @@ img {
     top: 3%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: min-content;
 }
 
 .rectangle {
@@ -119,7 +118,7 @@ img {
     position: fixed;
     display: inline-block;
     top: 1.7%;
-    left: 75%;
+    left: 80%;
     width: 3rem;
     height: 1.3rem;
     z-index: 1000000;
@@ -179,13 +178,13 @@ input:checked + .move::before {
 #urok {
     position: fixed;
     top: 1%;
-    left: 8%;
+    left: 5%;
     z-index: 999999;
 }
 
 #urokname {
     position: fixed;
-    left: 8%;
+    left: 5%;
     top: 3%;
     z-index: 999999;
     font-weight: bold;
