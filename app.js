@@ -54,7 +54,7 @@ function blur() {
             if (parseInt(key) === day) {
                 days[key].style.order = "-1"; // Перемещаем текущий день в начало
             } else {
-                // Прекращаем выполнение цикла
+                break; // Прекращаем выполнение цикла
             }
         }
     }
@@ -83,7 +83,7 @@ function dz() {
 }
 
 function sledurok() {
-    const startDate = new Date("2025-01-01");
+    const startDate = new Date("2025-01-06");
     const currentDate = new Date();
 
     const weeksPassed = Math.floor(
@@ -242,7 +242,7 @@ function sledurok() {
 setInterval(sledurok, 1000);
 
 function otschet() {
-    const startDate = new Date("2025-01-01");
+    const startDate = new Date("2025-01-06");
     const currentDate = new Date();
 
     const weeksPassed = Math.floor(
@@ -335,6 +335,56 @@ function otschet() {
     )
         uroktime = 9;
 
+    const lessons = {
+        1: {
+            1: "Хімія 9:00",
+            2: "Алгебра 9:55",
+            3: "Всесвітня 10:50",
+            4: "Фіз-ра 12:00",
+            5: "Біологія 12:55",
+            6: "Інформат 13:50",
+        },
+        2: {
+            1: "Геометрія 9:00",
+            2: "Іст. Укр 9:55",
+            3: "Фіз-ра 10:50",
+            4: "Фізика 12:00",
+            5: "-",
+            6: "Мист. 13:50",
+            7: "Осн. здор. 14:45",
+        },
+        3: {
+            1: "-",
+            2: "-",
+            3: "Зар. літ 10:50",
+            4: "-",
+            5: "-",
+            6: "Англ 13:50",
+            7: "Укр. мова 14:45",
+            8: "Укр. літ 15:40",
+        },
+        4: {
+            1: "-",
+            2: "Англ 9:55",
+            3: "-",
+            4: "-",
+            5: "-",
+            6: "Фізика 13:50",
+            7: "Труди 14:45",
+            8: "-",
+            9: "-",
+        },
+        5: {
+            1: "-",
+            2: "Правознав 9:55",
+            3: "-",
+            4: "Географія 12:00",
+            5: "-",
+            6: "-",
+            7: "-",
+        },
+    };
+
     const time = {
         1: "9:00:00",
         2: "9:55:00",
@@ -347,6 +397,17 @@ function otschet() {
         9: "16:35:00",
     };
 
+    let currentLesson = lessons[currentDay][uroktime];
+
+    if (uroktime != 10) {
+        while (currentLesson === "-") {
+            uroktime++;
+            currentLesson = lessons[currentDay][uroktime]; // Update currentLesson
+        }
+    } else {
+       
+    }
+
     const timeLeft = time[uroktime];
 
     var deadline = `${currentDate.toDateString()} ${timeLeft} GMT+02:00`;
@@ -355,6 +416,9 @@ function otschet() {
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
     var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
 
     var ostav = `${hours}:${minutes}:${seconds}`;
 
@@ -381,8 +445,9 @@ document.getElementById("clock").addEventListener("click", () => {
         otschet(); // Запуск функции otschet
     }
 });
+
 function smena() {
-    const startDate = new Date("2025-01-01");
+    const startDate = new Date("2025-01-06");
     const currentDate = new Date();
     const rows1 = document.querySelectorAll(".container .smena1");
     const rows2 = document.querySelectorAll(".container .smena2");
