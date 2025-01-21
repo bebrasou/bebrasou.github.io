@@ -182,6 +182,7 @@ input:checked + .move::before {
 }
 
 .schedule {
+    min-width: 100%;
     border-color: black;
 }
 
