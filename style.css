@@ -169,7 +169,7 @@ img {
 
 #urok {
     position: fixed;
-    top: 1%;
+    top: 0.7%;
     left: 5%;
     z-index: 999999;
 }
@@ -177,7 +177,7 @@ img {
 #urokname {
     position: fixed;
     left: 5%;
-    top: 3%;
+    top: 2.5%;
     z-index: 999999;
     font-weight: bold;
     font-size: 15px;
@@ -216,8 +216,8 @@ li {
 
 .text {
     position: absolute;
-    top: 5%;
-    left: 6%;
+    top: 11%;
+    left: 7.5%;
     max-width: 85vw;
     text-align: center;
 }
@@ -228,8 +228,8 @@ li {
 
 .gif {
     position: absolute;
-    top: 54%;
-    left: 36%;
+    bottom: 15vh;
+    left: 36vw;
 }
 
 .butback {
