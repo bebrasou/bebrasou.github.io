@@ -6,24 +6,23 @@
         <title>Расписание</title>
         <link rel="stylesheet" href="style.css" />
         <script src="app.js" defer></script>
-        <link rel="shortcut icon" href="icon.png" type="image/png">
+        <link rel="shortcut icon" href="icon.png" type="image/png" />
     </head>
     <body>
         <div id="roblox">
+            <div id="howto">
+                <button id="howto-btn" onclick="location.href = 'howto.html'">
+                    ?
+                </button>
+            </div>
             <div id="urok">
                 <h6>След. урок:</h6>
             </div>
             <div id="urokname">
                 <h6>Загружается...</h6>
             </div>
-            <div id="sw">
-                <label class="switch">
-                    <input type="checkbox" onclick="dz()" />
-                    <span class="move"></span>
-                </label>
-            </div>
             <div class="rectangle"></div>
-            <div id="clock">
+            <div id="clock" onclick="otschet()">
                 <div id="clocknow"><h4>Загружается...</h4></div>
                 <div id="otschet" style="display: none"></div>
             </div>
@@ -36,7 +35,6 @@
                         <td>№</td>
                         <td>Урок</td>
                         <td>Время</td>
-                        <td>Д/з</td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -46,9 +44,6 @@
                             >
                         </td>
                         <td>09:00 - 09:45</td>
-                        <td>
-                            <input type="checkbox" name="хімпон" id="хімпон1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -58,17 +53,17 @@
                             >
                         </td>
                         <td>09:55 - 10:40</td>
-                        <td>
-                            <input type="checkbox" name="алгпон" id="алгпон1" />
-                        </td>
                     </tr>
                     <tr class="smena2">
                         <td>3</td>
-                        <td><a href="https://meet.google.com/usr-ucrf-sar">Всесвітня Історія</a></td>
-                        <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="всепон" id="всепон1" />
+                            <a
+                                class="smena2"
+                                href="https://meet.google.com/usr-ucrf-sar"
+                                >Всесвітня Історія</a
+                            >
                         </td>
+                        <td>10:50 - 11:35</td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -78,9 +73,6 @@
                             >
                         </td>
                         <td>12:00 - 12:45</td>
-                        <td>
-                            <input type="checkbox" name="фізпон" id="фізпон1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -90,9 +82,6 @@
                             >
                         </td>
                         <td>12:55 - 13:40</td>
-                        <td>
-                            <input type="checkbox" name="біопон2" id="біопон2" />
-                        </td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -102,9 +91,6 @@
                             >
                         </td>
                         <td>13:50 - 14:35</td>
-                        <td>
-                            <input type="checkbox" name="інфпон" id="інфпон1" />
-                        </td>
                     </tr>
                 </table>
             </div>
@@ -115,7 +101,6 @@
                         <td>№</td>
                         <td>Урок</td>
                         <td>Время</td>
-                        <td>Д/з</td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -125,9 +110,6 @@
                             >
                         </td>
                         <td>09:00 - 09:45</td>
-                        <td>
-                            <input type="checkbox" name="геовто" id="геовто1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -137,9 +119,6 @@
                             >
                         </td>
                         <td>09:55 - 10:40</td>
-                        <td>
-                            <input type="checkbox" name="іствто" id="іствто1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -149,50 +128,42 @@
                             >
                         </td>
                         <td>10:50 - 11:35</td>
-                        <td>
-                            <input type="checkbox" name="фізвто" id="фізвто1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><a href="https://meet.google.com/iop-bcrj-hxs">Фізика</a></td>
-                        <td>12:00 - 12:45</td>
                         <td>
-                            <input
-                                type="checkbox"
-                                name="фізвто2"
-                                id="фізвто2"
-                            />
+                            <a href="https://meet.google.com/iop-bcrj-hxs"
+                                >Фізика</a
+                            >
                         </td>
+                        <td>12:00 - 12:45</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>5</td>
                         <td>Алгебра</td>
                         <td>12:55 - 13:40</td>
-                        <td>
-                            <input type="checkbox" name="алгвто" id="алгвто1" />
-                        </td>
                     </tr>
                     <tr class="smena2">
                         <td>6</td>
-                        <td><a href="https://meet.google.com/mhv-ouic-uir">Мистецтво</a></td>
-                        <!-- Старая ссылка -->
-                        <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="мисвто" id="мисвто1" />
+                            <a
+                                class="smena2"
+                                href="https://meet.google.com/mhv-ouic-uir"
+                                >Мистецтво</a
+                            >
                         </td>
+                        <td>13:50 - 14:35</td>
                     </tr>
                     <tr class="smena1">
                         <td>7</td>
                         <td>
-                            <a href="https://meet.google.com/fji-ygno-qac"
+                            <a
+                                class="smena1"
+                                href="https://meet.google.com/fji-ygno-qac"
                                 >Основи здоров’я</a
                             >
                         </td>
                         <td>14:45 - 15:30</td>
-                        <td>
-                            <input type="checkbox" name="оснвто" id="оснвто1" />
-                        </td>
                     </tr>
                 </table>
             </div>
@@ -203,71 +174,62 @@
                         <td>№</td>
                         <td>Урок</td>
                         <td>Время</td>
-                        <td>Д/з</td>
                     </tr>
                     <tr class="nonerow">
                         <td>1</td>
                         <td>-</td>
                         <td>9:00 - 9:45</td>
-                        <td>-</td>
                     </tr>
                     <tr class="nonerow">
                         <td>2</td>
                         <td>-</td>
                         <td>9:55 - 10:40</td>
-                        <td>-</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><a href="https://meet.google.com/smk-mbzc-cpb">Зар. літ</a></td>
-                        <td>10:50 - 11:35</td>
                         <td>
-                            <input type="checkbox" name="зарсре" id="зарсре1" />
+                            <a href="https://meet.google.com/smk-mbzc-cpb"
+                                >Зар. літ</a
+                            >
                         </td>
+                        <td>10:50 - 11:35</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>4</td>
                         <td id="sre">Географія/Історія</td>
                         <td>12:00 - 12:45</td>
-                        <td>
-                            <input type="checkbox" name="геосре" id="геосре1" />
-                        </td>
                     </tr>
                     <tr class="asyncrow">
                         <td>5</td>
                         <td>Фіз-ра</td>
                         <td>12:55 - 13:40</td>
-                        <td>
-                            <input type="checkbox" name="фізсре" id="фізсре1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><a href="https://meet.google.com/nwm-gzbn-otx">Англійська</a></td>
-                        <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="ангсре" id="ангсре1" />
+                            <a href="https://meet.google.com/nwm-gzbn-otx"
+                                >Англійська</a
+                            >
                         </td>
+                        <td>13:50 - 14:35</td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td><a href="https://meet.google.com/ukq-yepe-qbn">Укр. мова</a></td>
-                        <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="укрсре" id="укрсре1" />
+                            <a href="https://meet.google.com/ukq-yepe-qbn"
+                                >Укр. мова</a
+                            >
                         </td>
+                        <td>14:45 - 15:30</td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><a href="https://meet.google.com/ukq-yepe-qbn">Укр. літ</a></td>
-                        <td>15:40 - 16:25</td>
                         <td>
-                            <input
-                                type="checkbox"
-                                name="укрсре2"
-                                id="укрсре2"
-                            />
+                            <a href="https://meet.google.com/ukq-yepe-qbn"
+                                >Укр. літ</a
+                            >
                         </td>
+                        <td>15:40 - 16:25</td>
                     </tr>
                 </table>
             </div>
@@ -278,79 +240,65 @@
                         <td>№</td>
                         <td>Урок</td>
                         <td>Время</td>
-                        <td>Д/з</td>
                     </tr>
                     <tr class="nonerow">
                         <td>1</td>
                         <td>-</td>
                         <td>9:00 - 9:45</td>
-                        <td>-</td>
                     </tr>
                     <tr class="smena2">
                         <td>2</td>
-                        <td><a href="https://meet.google.com/nwm-gzbn-otx">Англійська</a></td>
-                        <td>09:55 - 10:40</td>
                         <td>
-                            <input type="checkbox" name="ангчет" id="ангчет1" />
+                            <a
+                                class="smena2"
+                                href="https://meet.google.com/nwm-gzbn-otx"
+                                >Англійська</a
+                            >
                         </td>
+                        <td>09:55 - 10:40</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>3</td>
                         <td>Геометрія</td>
                         <td>10:50 - 11:35</td>
-                        <td>
-                            <input type="checkbox" name="геочет" id="геочет1" />
-                        </td>
                     </tr>
                     <tr class="nonerow">
                         <td>4</td>
                         <td>-</td>
                         <td>12:00 - 12:45</td>
-                        <td>-</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>5</td>
                         <td>Зар. літ</td>
                         <td>12:55 - 13:40</td>
-                        <td>
-                            <input type="checkbox" name="зарчет" id="зарчет1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><a href="https://meet.google.com/iop-bcrj-hxs">Фізика</a></td>
-                        <td>13:50 - 14:35</td>
                         <td>
-                            <input type="checkbox" name="фізчет" id="фізчет1" />
+                            <a href="https://meet.google.com/iop-bcrj-hxs"
+                                >Фізика</a
+                            >
                         </td>
+                        <td>13:50 - 14:35</td>
                     </tr>
                     <tr id="hzrow">
                         <td>7</td>
-                        <td><a href="https://meet.google.com/eoo-npam-hhc">Труди</a></td>
-                        <td>14:45 - 15:30</td>
                         <td>
-                            <input type="checkbox" name="тручет" id="тручет1" />
+                            <a href="https://meet.google.com/eoo-npam-hhc"
+                                >Труди</a
+                            >
                         </td>
+                        <td>14:45 - 15:30</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>8</td>
                         <td>Укр. мова</td>
                         <td>15:40 - 16:25</td>
-                        <td>
-                            <input type="checkbox" name="укрчет" id="укрчет1" />
-                        </td>
                     </tr>
                     <tr class="asyncrow">
                         <td>9</td>
                         <td>Укр. літ</td>
                         <td>16:35 - 17:20</td>
-                        <td>
-                            <input
-                                type="checkbox"
-                                name="укрчет2"
-                                id="укрчет2"
-                            />
-                        </td>
                     </tr>
                 </table>
             </div>
@@ -361,71 +309,51 @@
                         <td>№</td>
                         <td>Урок</td>
                         <td>Время</td>
-                        <td>Д/з</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>1</td>
                         <td>Інформатика</td>
                         <td>09:00 - 09:45</td>
-                        <td>
-                            <input type="checkbox" name="інфпят" id="інфпят1" />
-                        </td>
                     </tr>
                     <tr class="smena1">
                         <td>2</td>
                         <td>
-                            <a href="https://meet.google.com/usr-ucrf-sar"
+                            <a
+                                class="smena1"
+                                href="https://meet.google.com/usr-ucrf-sar"
                                 >Правознавство</a
                             >
                         </td>
                         <td>09:55 - 10:40</td>
-                        <td>
-                            <input
-                                type="checkbox"
-                                name="правпят"
-                                id="правпят1"
-                            />
-                        </td>
                     </tr>
                     <tr class="asyncrow">
                         <td>3</td>
                         <td>Англійська</td>
                         <td>10:50 - 11:35</td>
-                        <td>
-                            <input type="checkbox" name="ангпят" id="ангпят1" />
-                        </td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><a href="https://meet.google.com/wqq-jpxi-bxq">Географія</a></td>
-                        <td>12:00 - 12:45</td>
                         <td>
-                            <input type="checkbox" name="геопят" id="геопят1" />
+                            <a href="https://meet.google.com/wqq-jpxi-bxq"
+                                >Географія</a
+                            >
                         </td>
+                        <td>12:00 - 12:45</td>
                     </tr>
                     <tr class="asyncrow">
                         <td>5</td>
                         <td>Хімія</td>
                         <td>12:55 - 13:40</td>
-                        <td>
-                            <input type="checkbox" name="хімпят" id="хімпят1" />
-                        </td>
                     </tr>
                     <tr class="asyncrow">
                         <td>6</td>
                         <td>Біологія</td>
                         <td>13:50 - 14:35</td>
-                        <td>
-                            <input type="checkbox" name="біопят" id="біопят1" />
-                        </td>
                     </tr>
                     <tr class="asyncrow">
                         <td>7</td>
                         <td>Фізика</td>
                         <td>14:45 - 15:30</td>
-                        <td>
-                            <input type="checkbox" name="фізпят" id="фізпят1" />
-                        </td>
                     </tr>
                 </table>
             </div>

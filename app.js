@@ -60,30 +60,8 @@ function blur() {
     }
 }
 
-function dz() {
-    const switchCheckbox = document.querySelector(
-        '.switch input[type="checkbox"]'
-    );
-    const rows = document.querySelectorAll(".container tr");
-
-    if (switchCheckbox.checked) {
-        rows.forEach((row) => {
-            const checkbox = row.querySelector('input[type="checkbox"]');
-            if (checkbox && !checkbox.checked) {
-                row.classList.add("highlight");
-            } else {
-                row.classList.remove("highlight");
-            }
-        });
-    } else {
-        rows.forEach((row) => {
-            row.classList.remove("highlight");
-        });
-    }
-}
-
 function sledurok() {
-    const startDate = new Date("2025-01-06");
+    const startDate = new Date("2025-01-04");
     const currentDate = new Date();
 
     const weeksPassed = Math.floor(
@@ -226,6 +204,11 @@ function sledurok() {
         },
     };
 
+    if (!lessons[currentDay]) {
+        document.getElementById("urokname").textContent = "Выходной!";
+        return;
+    }
+
     let currentLesson = lessons[currentDay][uroktime];
 
     const lesson = document.getElementById("urokname");
@@ -235,14 +218,12 @@ function sledurok() {
             currentLesson = lessons[currentDay][uroktime]; // Update currentLesson
         }
         lesson.textContent = currentLesson;
-    } else {
-        lesson.textContent = "Уроки завтра!";
     }
 }
 setInterval(sledurok, 1000);
 
 function otschet() {
-    const startDate = new Date("2025-01-06");
+    const startDate = new Date("2025-01-04");
     const currentDate = new Date();
 
     const weeksPassed = Math.floor(
@@ -397,6 +378,11 @@ function otschet() {
         9: "16:35:00",
     };
 
+    if (!lessons[currentDay]) {
+        document.getElementById("otschet").textContent = "Выходной!";
+        return;
+    }
+
     let currentLesson = lessons[currentDay][uroktime];
 
     if (uroktime != 10) {
@@ -447,31 +433,30 @@ document.getElementById("clock").addEventListener("click", () => {
 });
 
 function smena() {
-    const startDate = new Date("2025-01-06");
-    const currentDate = new Date();
-    const rows1 = document.querySelectorAll(".container .smena1");
-    const rows2 = document.querySelectorAll(".container .smena2");
+    var startDate = new Date("2025-01-04"); // Дата начала
+    var currentDate = new Date(); // Текущая дата
 
-    const weeksPassed = Math.floor(
-        (currentDate - startDate) / (7 * 24 * 60 * 60 * 1000)
-    );
+    var weeksPassed = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
 
-    const value = weeksPassed % 2 === 0 ? 1 : 2;
+    var value = (weeksPassed % 2 === 0) ? 1 : 2;
 
-    if (value === 1) {
-        rows1.forEach((row) => {
-            row.classList.add("smena");
-            document.getElementById("sre").textContent = "Історія";
-        });
+    var smenaClass = (value === 1) ? "smena1" : "smena2";
+    var text = (value === 1) ? "Історія" : "Географія";
+
+    var rows = document.querySelectorAll(".container ." + smenaClass);
+    var as = document.querySelectorAll("a." + smenaClass);
+
+    for (var i = 0; i < rows.length; i++) {
+        rows[i].classList.add("smena");
     }
 
-    if (value === 2) {
-        rows2.forEach((row) => {
-            row.classList.add("smena");
-            document.getElementById("sre").textContent = "Географія";
-        });
+    var sre = document.getElementById("sre");
+    if (sre) {
+        sre.textContent = text;
     }
 }
+
+
 
 window.onload = function () {
     blur(), sledurok(), clocknow(), smena();
