@@ -217,6 +217,9 @@ function sledurok() {
             uroktime++;
             currentLesson = lessons[currentDay][uroktime]; // Update currentLesson
         }
+        if (currentLesson === undefined) {
+            lesson.textContent = "Уроки завтра!"
+        } else
         lesson.textContent = currentLesson;
     }
 }
@@ -390,8 +393,6 @@ function otschet() {
             uroktime++;
             currentLesson = lessons[currentDay][uroktime]; // Update currentLesson
         }
-    } else {
-       
     }
 
     const timeLeft = time[uroktime];
@@ -408,7 +409,7 @@ function otschet() {
 
     var ostav = `${hours}:${minutes}:${seconds}`;
 
-    if (uroktime !== 10) {
+    if (uroktime !== 10 && currentLesson !== undefined) {
         clock.textContent = ostav;
         console.log(ostav);
     } else {
