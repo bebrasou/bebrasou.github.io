@@ -217,19 +217,23 @@ li {
 .text {
     position: absolute;
     top: 11%;
-    left: 7.5%;
-    max-width: 85vw;
+    left: 7.1%;
+    right: 7.1%;
+    max-width: 8vw;
     text-align: center;
 }
 
 #bd {
+    align-items: center;
+    text-align: center;
     justify-content: center;
 }
 
 .gif {
     position: absolute;
     bottom: 15vh;
-    left: 36vw;
+    right: 34vw;
+    left: 34vw;
 }
 
 .butback {
