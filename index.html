@@ -10,37 +10,40 @@
     </head>
     <body>
         <div id="roblox">
+            <!--
             <div id="howto">
                 <button id="howto-btn" onclick="location.href = 'howto.html'">
                     ?
                 </button>
             </div>
-            <div id="urok">
-                <h6>След. урок:</h6>
+            -->
+            <div id="lesson">
+                <h6>Наст. предмет:</h6>
             </div>
-            <div id="urokname">
-                <h6>Загружается...</h6>
+            <div id="lessonName">
+                <h6>Завантажується...</h6>
             </div>
             <div class="rectangle"></div>
-            <div id="clock" onclick="otschet()">
-                <div id="clocknow"><h4>Загружается...</h4></div>
-                <div id="otschet" style="display: none"></div>
+            <div id="clock" onclick="countDown()">
+                <div id="clocknow"><h4>Завантажується...</h4></div>
+                <div id="countDown" style="display: none"></div>
             </div>
         </div>
         <div class="container">
-            <div id="ponedelnik" class="day">
-                <h2>Понедельник</h2>
+            <div id="monday" class="day">
+                <h2>Понеділок</h2>
                 <table class="schedule">
-                    <tr id="inforow">
+                    <tr class="infoRow">
                         <td>№</td>
-                        <td>Урок</td>
-                        <td>Время</td>
+                        <td>Предмет</td>
+                        <td>Час</td>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>
-                            <a href="https://meet.google.com/xfx-scnb-rqt"
-                                >Хімія</a
+                            <a href="https://meet.google.com/mij-ivhg-fii"
+                               target="_blank"
+                                >Укр. мова</a
                             >
                         </td>
                         <td>09:00 - 09:45</td>
@@ -48,19 +51,20 @@
                     <tr>
                         <td>2</td>
                         <td>
-                            <a href="https://meet.google.com/hrd-aajh-vhq"
-                                >Алгебра</a
+                            <a href="https://meet.google.com/mij-ivhg-fii"
+                               target="_blank"
+                                >Укр. літ</a
                             >
                         </td>
                         <td>09:55 - 10:40</td>
                     </tr>
-                    <tr class="smena2">
+                    <tr>
                         <td>3</td>
                         <td>
                             <a
-                                class="smena2"
-                                href="https://meet.google.com/usr-ucrf-sar"
-                                >Всесвітня Історія</a
+                                href="https://meet.google.com/txg-oqfw-ywp"
+                                target="_blank"
+                                >Географія</a
                             >
                         </td>
                         <td>10:50 - 11:35</td>
@@ -68,291 +72,407 @@
                     <tr>
                         <td>4</td>
                         <td>
-                            <a href="https://meet.google.com/zbs-suor-hzt"
-                                >Фіз-ра</a
-                            >
-                        </td>
-                        <td>12:00 - 12:45</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>
-                            <a href="https://meet.google.com/bva-cfqi-fmi"
-                                >Біологія</a
-                            >
-                        </td>
-                        <td>12:55 - 13:40</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>
-                            <a href="https://meet.google.com/mcr-rgff-yko"
-                                >Інформатика</a
-                            >
-                        </td>
-                        <td>13:50 - 14:35</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="vtornik" class="day">
-                <h2>Вторник</h2>
-                <table class="schedule">
-                    <tr id="inforow">
-                        <td>№</td>
-                        <td>Урок</td>
-                        <td>Время</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <a href="https://meet.google.com/hrd-aajh-vhq"
-                                >Геометрія</a
-                            >
-                        </td>
-                        <td>09:00 - 09:45</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>
-                            <a href="https://meet.google.com/usr-ucrf-sar"
+                            <a href="https://meet.google.com/nrt-ydnw-shy"
+                               target="_blank"
                                 >Історія України</a
                             >
                         </td>
-                        <td>09:55 - 10:40</td>
+                        <td>12:00 - 12:45</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td>5</td>
                         <td>
-                            <a href="https://meet.google.com/zbs-suor-hzt"
+                            <a href="https://meet.google.com/vcc-xnrb-bua"
+                               target="_blank"
                                 >Фіз-ра</a
                             >
                         </td>
-                        <td>10:50 - 11:35</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>
-                            <a href="https://meet.google.com/iop-bcrj-hxs"
-                                >Фізика</a
-                            >
-                        </td>
-                        <td>12:00 - 12:45</td>
-                    </tr>
-                    <tr class="asyncrow">
-                        <td>5</td>
-                        <td>Алгебра</td>
                         <td>12:55 - 13:40</td>
                     </tr>
-                    <tr class="smena2">
+                    <tr class="asyncRow">
                         <td>6</td>
                         <td>
-                            <a
-                                class="smena2"
-                                href="https://meet.google.com/mhv-ouic-uir"
-                                >Мистецтво</a
+                            <a href="https://meet.google.com/bva-cfqi-fmi"
+                               target="_blank"
+                                >Біологія</a
                             >
                         </td>
                         <td>13:50 - 14:35</td>
                     </tr>
-                    <tr class="smena1">
+                    <tr>
                         <td>7</td>
                         <td>
-                            <a
-                                class="smena1"
-                                href="https://meet.google.com/fji-ygno-qac"
-                                >Основи здоров’я</a
+                            <a href="https://meet.google.com/nrt-ydnw-shy"
+                               target="_blank"
+                            >Громад. освіта</a
                             >
                         </td>
                         <td>14:45 - 15:30</td>
                     </tr>
                 </table>
             </div>
-            <div id="sreda" class="day">
-                <h2>Среда</h2>
+            <div id="tuesday" class="day">
+                <h2>Вівторок</h2>
                 <table class="schedule">
-                    <tr id="inforow">
+                    <tr class="infoRow">
                         <td>№</td>
-                        <td>Урок</td>
-                        <td>Время</td>
+                        <td>Предмет</td>
+                        <td>Час</td>
                     </tr>
-                    <tr class="nonerow">
+                    <tr>
                         <td>1</td>
-                        <td>-</td>
+                        <td>
+                            <a href="https://meet.google.com/vcc-xnrb-bua"
+                               target="_blank"
+                                >Фіз-ра</a
+                            >
+                        </td>
+                        <td>09:00 - 09:45</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <a href="https://meet.google.com/mij-ivhg-fii"
+                               target="_blank"
+                                >Укр. мова</a
+                            >
+                        </td>
+                        <td>09:55 - 10:40</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <a href="https://meet.google.com/mij-ivhg-fii"
+                               target="_blank"
+                                >Укр. літ</a
+                            >
+                        </td>
+                        <td>10:50 - 11:35</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <a href="https://meet.google.com/hrd-aajh-vhq"
+                               target="_blank"
+                                >Алгебра</a
+                            >
+                        </td>
+                        <td>12:00 - 12:45</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <a href="https://meet.google.com/ssp-rdkw-xpr"
+                               target="_blank"
+                            >Фізика</a
+                            >
+                        </td>
+                        <td>12:55 - 13:40</td>
+                    </tr>
+                    <tr class="dontKnownRow">
+                        <td>6</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/hwo-fyhq-yqv"
+                                target="_blank"
+                                >Захист Вітчизни</a
+                            >
+                        </td>
+                        <td>13:50 - 14:35</td>
+                    </tr>
+                    <tr class="dontKnownRow">
+                        <td>7</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/oqv-tuzj-fka"
+                                target="_blank"
+                                >Мистец</a
+                            >
+                            /
+                            <a
+                                href="https://meet.google.com/weo-tvty-vez"
+                                target="_blank"
+                                >Інформ</a
+                            >
+                        </td>
+                        <td>14:45 - 15:30</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="wednesday" class="day">
+                <h2>Середа</h2>
+                <table class="schedule">
+                    <tr class="infoRow">
+                        <td>№</td>
+                        <td>Предмет</td>
+                        <td>Час</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/mij-ivhg-fii"
+                                target="_blank"
+                            >Укр. мова</a
+                            >
+                        </td>
                         <td>9:00 - 9:45</td>
                     </tr>
-                    <tr class="nonerow">
+                    <tr>
                         <td>2</td>
-                        <td>-</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/ria-dgbt-cuz"
+                                target="_blank"
+                            >Англійська</a
+                            >
+                        </td>
                         <td>9:55 - 10:40</td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>
-                            <a href="https://meet.google.com/smk-mbzc-cpb"
-                                >Зар. літ</a
-                            >
-                        </td>
-                        <td>10:50 - 11:35</td>
-                    </tr>
-                    <tr class="asyncrow">
-                        <td>4</td>
-                        <td id="sre">Географія/Історія</td>
-                        <td>12:00 - 12:45</td>
-                    </tr>
-                    <tr class="asyncrow">
-                        <td>5</td>
-                        <td>Фіз-ра</td>
-                        <td>12:55 - 13:40</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>
-                            <a href="https://meet.google.com/nwm-gzbn-otx"
-                                >Англійська</a
-                            >
-                        </td>
-                        <td>13:50 - 14:35</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>
-                            <a href="https://meet.google.com/ukq-yepe-qbn"
-                                >Укр. мова</a
-                            >
-                        </td>
-                        <td>14:45 - 15:30</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>
-                            <a href="https://meet.google.com/ukq-yepe-qbn"
+                            <a
+                                href="https://meet.google.com/mij-ivhg-fii"
+                                target="_blank"
                                 >Укр. літ</a
                             >
                         </td>
-                        <td>15:40 - 16:25</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="chetverg" class="day">
-                <h2>Четверг</h2>
-                <table class="schedule">
-                    <tr id="inforow">
-                        <td>№</td>
-                        <td>Урок</td>
-                        <td>Время</td>
-                    </tr>
-                    <tr class="nonerow">
-                        <td>1</td>
-                        <td>-</td>
-                        <td>9:00 - 9:45</td>
-                    </tr>
-                    <tr class="smena2">
-                        <td>2</td>
-                        <td>
-                            <a
-                                class="smena2"
-                                href="https://meet.google.com/nwm-gzbn-otx"
-                                >Англійська</a
-                            >
-                        </td>
-                        <td>09:55 - 10:40</td>
-                    </tr>
-                    <tr class="asyncrow">
-                        <td>3</td>
-                        <td>Геометрія</td>
                         <td>10:50 - 11:35</td>
                     </tr>
-                    <tr class="nonerow">
+                    <tr>
                         <td>4</td>
-                        <td>-</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/hrd-aajh-vhq"
+                                target="_blank"
+                                >Геометрія</a
+                            >
+                        </td>
                         <td>12:00 - 12:45</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr class="asyncRow">
                         <td>5</td>
-                        <td>Зар. літ</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/nrt-ydnw-shy"
+                                target="_blank"
+                                >Громад. освіта</a
+                            >
+                        </td>
                         <td>12:55 - 13:40</td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>
-                            <a href="https://meet.google.com/iop-bcrj-hxs"
-                                >Фізика</a
+                            <a
+                                href="https://meet.google.com/oqv-tuzj-fka"
+                                target="_blank"
+                                >Мистецтво</a
                             >
                         </td>
                         <td>13:50 - 14:35</td>
                     </tr>
-                    <tr id="hzrow">
+                    <tr class="asyncRow">
                         <td>7</td>
                         <td>
-                            <a href="https://meet.google.com/eoo-npam-hhc"
-                                >Труди</a
+                            <a
+                                href="https://meet.google.com/vcc-xnrb-bua"
+                                target="_blank"
+                                >Фіз-ра</a
                             >
                         </td>
                         <td>14:45 - 15:30</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr class="asyncRow">
                         <td>8</td>
-                        <td>Укр. мова</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/xfx-scnb-rqt"
+                                target="_blank"
+                                >Хімія</a
+                            >
+                            /
+                            <a
+                                href="https://meet.google.com/txg-oqfw-ywp"
+                                target="_blank"
+                                >Географія</a
+                            >
+                        </td>
                         <td>15:40 - 16:25</td>
-                    </tr>
-                    <tr class="asyncrow">
-                        <td>9</td>
-                        <td>Укр. літ</td>
-                        <td>16:35 - 17:20</td>
                     </tr>
                 </table>
             </div>
-            <div id="pyatnica" class="day">
-                <h2>Пятница</h2>
+            <div id="thursday" class="day">
+                <h2>Четвер</h2>
                 <table class="schedule">
-                    <tr id="inforow">
+                    <tr class="infoRow">
                         <td>№</td>
-                        <td>Урок</td>
-                        <td>Время</td>
+                        <td>Предмет</td>
+                        <td>Час</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr>
                         <td>1</td>
-                        <td>Інформатика</td>
-                        <td>09:00 - 09:45</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/nrt-ydnw-shy"
+                                target="_blank"
+                            >Всесвіт. історія</a
+                            >
+                        </td>
+                        <td>9:00 - 9:45</td>
                     </tr>
-                    <tr class="smena1">
+                    <tr>
                         <td>2</td>
                         <td>
                             <a
-                                class="smena1"
-                                href="https://meet.google.com/usr-ucrf-sar"
-                                >Правознавство</a
+                                href="https://meet.google.com/weo-tvty-vez"
+                                target="_blank"
+                            >Інформатика</a
                             >
                         </td>
-                        <td>09:55 - 10:40</td>
+                        <td>9:55 - 10:40</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr class="asyncRow">
                         <td>3</td>
-                        <td>Англійська</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/hrd-aajh-vhq"
+                                target="_blank"
+                            >Геометрія</a
+                            >
+                        </td>
                         <td>10:50 - 11:35</td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>
-                            <a href="https://meet.google.com/wqq-jpxi-bxq"
-                                >Географія</a
+                            <a
+                                href="https://meet.google.com/hwo-fyhq-yqv"
+                                target="_blank"
+                            >Захист Вітчизни</a
                             >
                         </td>
                         <td>12:00 - 12:45</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr>
                         <td>5</td>
-                        <td>Хімія</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/tyn-iacw-hnr"
+                                target="_blank"
+                            >Заруб. літ</a
+                            >
+                        </td>
                         <td>12:55 - 13:40</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr class="dontKnownRow">
                         <td>6</td>
-                        <td>Біологія</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/ria-dgbt-cuz"
+                                target="_blank"
+                            >Англійська</a
+                            >
+                        </td>
                         <td>13:50 - 14:35</td>
                     </tr>
-                    <tr class="asyncrow">
+                    <tr>
                         <td>7</td>
-                        <td>Фізика</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/ssp-rdkw-xpr"
+                                target="_blank"
+                            >Фізика</a
+                            >
+                        </td>
+                        <td>14:45 - 15:30</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="friday" class="day">
+                <h2>П'ятница</h2>
+                <table class="schedule">
+                    <tr class="infoRow">
+                        <td>№</td>
+                        <td>Предмет</td>
+                        <td>Час</td>
+                    </tr>
+                    <tr class="asyncRow">
+                        <td>1</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/hrd-aajh-vhq"
+                                target="_blank"
+                            >Алгебра</a
+                            >
+                        </td>
+                        <td>9:00 - 9:45</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/bva-cfqi-fmi"
+                                target="_blank"
+                            >Біологія</a
+                            >
+                        </td>
+                        <td>9:55 - 10:40</td>
+                    </tr>
+                    <tr class="asyncRow">
+                        <td>3</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/ssp-rdkw-xpr"
+                                target="_blank"
+                            >Фізика</a
+                            >
+                        </td>
+                        <td>10:50 - 11:35</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/xfx-scnb-rqt"
+                                target="_blank"
+                            >Хімія</a
+                            >
+                        </td>
+                        <td>12:00 - 12:45</td>
+                    </tr>
+                    <tr class="asyncRow">
+                        <td>5</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/nrt-ydnw-shy"
+                                target="_blank"
+                            >Історія України</a
+                            >
+                        </td>
+                        <td>12:55 - 13:40</td>
+                    </tr>
+                    <tr class="asyncRow">
+                        <td>6</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/mij-ivhg-fii"
+                                target="_blank"
+                            >Укр. мова</a
+                            >
+                        </td>
+                        <td>13:50 - 14:35</td>
+                    </tr>
+                    <tr class="asyncRow">
+                        <td>7</td>
+                        <td>
+                            <a
+                                href="https://meet.google.com/mij-ivhg-fii"
+                                target="_blank"
+                            >Укр. літ</a
+                            >
+                        </td>
                         <td>14:45 - 15:30</td>
                     </tr>
                 </table>

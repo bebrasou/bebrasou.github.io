@@ -49,6 +49,7 @@ h2 {
 table {
     opacity: 90%;
     max-width: max-content;
+    table-layout: fixed;
     background-color: green;
     border-collapse: collapse;
     text-align: center;
@@ -66,12 +67,16 @@ th {
     border: 1px solid black;
 }
 
-#inforow {
+td {
+    white-space: nowrap;
+}
+
+.infoRow {
     background-color: rgb(166, 166, 166);
     font-weight: bold;
 }
 
-.nonerow {
+.noneRow {
     background-color: black;
     color: white;
 }
@@ -80,20 +85,16 @@ tr.highlight {
     background-color: rgb(109, 216, 252) !important;
 }
 
-.asyncrow {
+.asyncRow {
     background-color: rgb(255, 0, 0);
 }
 
-tr.smena {
-    background-color: red; 
-}
-
-tr a.smena{
+.asyncRow a {
     font-weight: 400;
     color: black;
 }
 
-#hzrow {
+.dontKnownRow {
     background-color: rgb(255, 208, 0);
 }
 
@@ -167,33 +168,20 @@ img {
     border-color: black;
 }
 
-#urok {
+#lesson {
     position: fixed;
-    top: 0.7%;
+    top: 1.2vh;
     left: 5%;
     z-index: 999999;
 }
 
-#urokname {
+#lessonName {
     position: fixed;
     left: 5%;
-    top: 2.5%;
+    top: 2.8vh;
     z-index: 999999;
     font-weight: bold;
     font-size: 15px;
-}
-
-#ponedelnik::after {
-    content: '';
-    position: absolute;
-    width: 89%;
-    height: 40.7%;
-    background-color: transparent;
-    z-index: -1;
-    top: 38%;
-    left: 50%;
-    translate: -50% -50%;
-    border-radius: 5px;
 }
 
 .rec {
