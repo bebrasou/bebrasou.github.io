@@ -48,7 +48,7 @@ body {
     backdrop-filter: blur(60px);
     border-radius: 20px;
     width: 90vw;
-    height: 140vh;
+    height: fit-content;
     position: relative;
 }
 
