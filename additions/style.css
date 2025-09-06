@@ -8,7 +8,7 @@
 
 #infoRow {
     background-color: rgb(166, 166, 166);
-    font-weight: bold;
+    font-weight: 650;
 }
 
 a {
@@ -19,6 +19,7 @@ a {
 
 body {
     min-height: 100vh;
+    font-size: 12px;
     margin: 0;
     padding: 0;
     background-image: url("../bg.jpg");
@@ -27,7 +28,7 @@ body {
     background-position: center;
     background-size: cover;
     font-family: "Montserrat", serif;
-    font-weight: 400;
+    font-weight: 550;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +48,7 @@ body {
     backdrop-filter: blur(60px);
     border-radius: 20px;
     width: 90vw;
-    height: 152vh;
+    height: 140vh;
     position: relative;
 }
 
@@ -69,7 +70,7 @@ body {
     border-collapse: collapse;
     text-align: center;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 9px;
     overflow: hidden;
 }

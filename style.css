@@ -134,7 +134,7 @@ tr.highlight {
 
 #howto {
     position: fixed;
-    top: 1.2vh;
+    top: 0.8%;
     right: 9%;
     z-index: 999999999;
 }
@@ -166,7 +166,7 @@ tr.highlight {
 
 #lesson {
     position: fixed;
-    top: 1.2vh;
+    top: 1%;
     left: 5%;
     z-index: 999999;
 }
@@ -174,7 +174,7 @@ tr.highlight {
 #lessonName {
     position: fixed;
     left: 5%;
-    top: 2.8vh;
+    top: 2.8%;
     z-index: 999999;
     font-weight: bold;
     font-size: 15px;
