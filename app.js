@@ -283,8 +283,32 @@ function change() {
     }
 }
 
+function defendUkraine() {
+    const lesson6 = document.querySelectorAll('.lesson6');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+
+    lesson6.forEach(row => {
+        row.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+// Закрытие при клике вне попапа
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+}
 
 window.onload = function () {
+    defendUkraine()
     order()
     nextLesson()
     clockNow()

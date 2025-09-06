@@ -42,8 +42,19 @@ h2 {
     color: rgba(0, 4, 249, 0.774);
 }
 
+.lesson6 {
+    font-weight: 590;
+    color: rgba(0, 4, 249, 0.774);
+    cursor: pointer;
+
+}
+
 .container a:hover {
     text-decoration: underline;
+}
+
+#girls {
+    color: deeppink; !important;
 }
 
 table {
@@ -134,8 +145,8 @@ tr.highlight {
 
 #howto {
     position: fixed;
-    top: 0.8%;
-    right: 9%;
+    top: 1%;
+    right: 8%;
     z-index: 999999999;
 }
 
@@ -145,7 +156,7 @@ tr.highlight {
     background: rgba(255, 255, 255, 0.108);
     border: none;
     border-radius: 1.2rem;
-    width: 35px;
+    width: 90px;
     height: 35px;
     right: 10%;
     cursor: pointer;
@@ -180,3 +191,38 @@ tr.highlight {
     font-size: 15px;
 }
 
+.popup {
+    display: none; /* скрыт по умолчанию */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1); /* прозрачный фон */
+    backdrop-filter: blur(60px);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#popup p {
+    margin: 10px 0;
+}
+
+#popup a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#popup button {
+    background: rgba(255, 255, 255, 0.2); /* прозрачный фон */
+    backdrop-filter: blur(60px);
+    border: 1px solid black;
+    border-radius: 6px;
+    font-weight: bolder;
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
