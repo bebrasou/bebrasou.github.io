@@ -98,10 +98,6 @@ tr.highlight {
     background-color: rgb(255, 208, 0);
 }
 
-img {
-    max-width: 100%;
-}
-
 #clock {
     position: fixed;
     color: black;
@@ -138,7 +134,7 @@ img {
 
 #howto {
     position: fixed;
-    top: 0.8%;
+    top: 1.2vh;
     right: 9%;
     z-index: 999999999;
 }
@@ -148,9 +144,9 @@ img {
     font-weight: 700;
     background: rgba(255, 255, 255, 0.108);
     border: none;
-    border-radius: 1rem;
-    width: 30px;
-    height: 30px;
+    border-radius: 1.2rem;
+    width: 35px;
+    height: 35px;
     right: 10%;
     cursor: pointer;
 }
@@ -184,56 +180,3 @@ img {
     font-size: 15px;
 }
 
-.rec {
-    background: transparent;
-    backdrop-filter: blur(60px);
-    border-radius: 20px;
-    width: 90vw;
-    height: 90vh;
-}
-
-ul {
-    list-style-position: inside;
-    padding-left: 0;
-}
-
-li {
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.text {
-    position: absolute;
-    top: 11%;
-    left: 7.1%;
-    right: 7.1%;
-    max-width: 8vw;
-    text-align: center;
-}
-
-#bd {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
-.gif {
-    position: absolute;
-    bottom: 15vh;
-    right: 34vw;
-    left: 34vw;
-}
-
-.butback {
-    position: absolute;
-    font-family: "Montserrat", serif;
-    background: rgba(255, 255, 255, 0.108);
-    border: none;
-    border-radius: 1rem;
-    width: 40px;
-    height: 34px;
-    left: 7%;
-    top: 5%;
-    z-index: 10;
-    cursor: pointer;
-}
