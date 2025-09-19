@@ -80,51 +80,6 @@
     </div>
   </body>
   <script>
-    const themes = [
-      "blue",
-      "cherry",
-      "violet",
-      "green",
-      "orange",
-      "purple",
-      "white",
-      "mesh-purple",
-      "summer-wave",
-      "retro-gradient",
-    ];
-
-    // Preload all of the themes css to avoid the FOUC on change
-    themes.forEach((theme) => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = `./main-themes/${theme}/style.css`;
-      link.classList.add(`theme-${theme}`);
-      link.disabled = true;
-      document.head.appendChild(link);
-    });
-
-    function changeCSS(theme) {
-      // Disable any themes that aren't the selected one
-      themes.forEach((t) => {
-        document.querySelector(`.theme-${t}`).disabled = t !== theme;
-      });
-      changeImgSrc(theme);
-      // And save it to localStorage
-      localStorage.setItem("selected-theme", theme);
-    }
-
-    // Change background image
-    function changeImgSrc(theme) {
-      let img_bar = document.getElementById("img");
-      img_bar.src = `./main-themes/${theme}/images/gif.gif`;
-    }
-
-    // Load the last selected theme on load
-    let storedTheme = localStorage.getItem("selected-theme");
-    if (storedTheme) {
-      changeCSS(storedTheme);
-    }
-
     const search_url = "https://www.google.com/search?q=";
 
     function search() {
