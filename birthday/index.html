@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>С Днём Рождения!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('t89dhs8sza.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+        #slide3 {
+            max-width: 800px;
+            padding-bottom: 80px;
+        }
+
+        .active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .question {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        .welcome-title {
+            font-size: 40px;
+            margin: 20px 0 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .welcome-subtitle {
+            font-size: 40px;
+            margin: 0 0 20px;
+            color: #e485a9;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .welcome-text {
+            font-size: 22px;
+            margin: 20px 0;
+            color: #6c757d;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-pink {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .btn-blue {
+            background-color: #6495ed;
+            color: white;
+        }
+
+        .welcome-btn {
+            background-color: #e485a9;
+            color: white;
+            font-size: 22px;
+            padding: 15px 40px;
+            border-radius: 50px;
+        }
+
+        .envelope {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .top-image {
+            width: 150px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .welcome-image {
+            width: 250px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sad-message {
+            font-size: 22px;
+            color: #ff69b4;
+            margin: 20px 0;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .final-message {
+            font-size: 16px;
+            color: #ff69b4;
+            margin: 20px 0;
+            line-height: 1.5;
+            text-align: left;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 0 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        .lace-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            position: absolute;
+            bottom: 10px;
+            color: #ff69b4;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .audio-controls {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 8px;
+            border-radius: 50%;
+            z-index: 100;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #ff69b4;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* 移动端适配 */
+        @media screen and (max-width: 768px) {
+            .slide {
+                width: 95%;
+                padding: 15px;
+                padding-bottom: 60px;
+            }
+
+            #slide3 {
+                padding-bottom: 70px;
+            }
+
+            .welcome-title {
+                font-size: 30px;
+            }
+
+            .welcome-subtitle {
+                font-size: 26px;
+                white-space: normal;
+                padding: 0 10px;
+            }
+
+            .welcome-text {
+                font-size: 18px;
+                white-space: normal;
+                padding: 0 10px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+            .welcome-btn {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                align-items: center;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 8px 15px;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .envelope {
+                width: 150px;
+            }
+
+            .top-image {
+                width: 120px;
+            }
+
+            .welcome-image {
+                width: 200px;
+            }
+
+            .sad-message {
+                font-size: 18px;
+            }
+
+            .final-message {
+                font-size: 15px;
+                max-height: 400px;
+                padding: 0 10px;
+            }
+
+            .lace-image {
+                max-width: 300px;
+            }
+
+            .back-link {
+                font-size: 14px;
+            }
+        }
+
+        /* 小屏幕手机适配 */
+        @media screen and (max-width: 480px) {
+            .slide {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+                height: 100vh;
+                padding: 15px 10px;
+                box-sizing: border-box;
+                justify-content: center;
+            }
+
+            body {
+                background-attachment: fixed;
+            }
+
+            .welcome-title {
+                font-size: 24px;
+                margin: 10px 0 5px;
+            }
+
+            .welcome-subtitle {
+                font-size: 22px;
+                margin: 0 0 10px;
+            }
+
+            .welcome-text {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+
+            .question {
+                font-size: 18px;
+            }
+
+            .envelope {
+                width: 130px;
+            }
+
+            .top-image {
+                width: 100px;
+            }
+
+            .welcome-image {
+                width: 160px;
+            }
+
+            .final-message {
+                font-size: 14px;
+                max-height: 350px;
+            }
+
+            .audio-controls {
+                bottom: 70px;
+            }
+
+            .back-link {
+                position: fixed;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" loop>
+        <source src="bg_music.m4a" type="audio/mpeg">
+    </audio>
+    
+    <audio id="clickSound">
+        <source src="https://public.youware.com/users-website-assets/prod/1f315d1b-63cc-4839-80ae-a5c5cb784500/212-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="audio-controls">
+        <button class="audio-btn" id="toggleMusic">🎵</button>
+    </div>
+
+    <div id="slide0" class="slide active">
+        <img src="preview.jpg" alt="С днём рождения, моя течная омежка." class="welcome-image">
+        <div class="welcome-title">с днём рождения</div>
+        <div class="welcome-subtitle">ангелочек 🤍🤍</div>
+        <div class="welcome-text">Нажми на кнопку "Далее"!!</div>
+        <button class="btn welcome-btn" onclick="playClickAndShow('slide1')">Далее!!</button>
+    </div>
+
+    <div id="slide1" class="slide">
+        <img src="will_you_open.gif" alt="Сердечко" class="top-image" onclick="playClickAndShow('slide3')">
+        <img src="envelope.jpg" alt="Конверт" class="envelope" onclick="playClickAndShow('slide3')" style="cursor: pointer;">
+        <div class="question">откроешь письмо?</div>
+        <div class="buttons">
+            <button class="btn btn-pink" onclick="playClickAndShow('slide3')">да, давааай!!</button>
+            <button class="btn btn-blue" onclick="playClickAndShow('slide2')">нет.(ПОЧЕМУ.</button>
+        </div>
+        <a class="back-link" onclick="playClickAndShow('slide0')">вернуться назад</a>
+    </div>
+
+    <div id="slide2" class="slide" onclick="playClickAndShow('slide1')">
+        <div style="position: relative; z-index: 10; pointer-events: none;">
+            <img src="sad_cat.jpg" alt="Грустный" class="top-image">
+            <div class="sad-message">почему? иди нажимай да</div>
+        </div>
+        <a class="back-link" onclick="playClickAndShow('slide1'); event.stopPropagation();" style="pointer-events: auto; z-index: 20; position: relative;">вернуться назад</a>
+    </div>
+
+    <div id="slide3" class="slide" onclick="playClickAndShow('slide1')">
+        <div style="position: relative; z-index: 10; pointer-events: none;">
+            <img src="love_cat.gif" alt="Открытка" class="lace-image">
+            <div class="final-message" onclick="event.stopPropagation();" style="pointer-events: auto;">
+                Миланя мая, я хочу начать этот текст именно с благодарности тебе, за то что ты просто есть, спасибо тебе большое что ты всегда стараешься меня поддержать, спасибо что не оставляешь меня, что радуешь мою душу каждый день своим присутствием, спасибо что ты рядом, я это очень ценю, и стараюсь это показывать, иногда я не говорю тебе каких то своих переживаний по поводу всего,но мне спокойнее от одного разговора с тобой, ведь ты вовсе не чужой мне человек, а самый близкий, мне так нравится с тобой общаться, нравится слушать твои истории, нравится помогать тебе, слушать, каждый раз узнаю о тебе что то новое, каждый раз заново узнаю твои проблемы, переживания, комплексы, тревогу, в общем то тебя, и мне это безумно ценно, наблюдаю как каждый раз собирается какая-то картинка и каждый новый нарисованный кусочек делает тебя ещё роднее и важнее для меня, еще ни разу ты не была в моих глазах плохой из за чего либо, ни из за каких то твоих поступков, ни из за твоих переживаний или прочее, ты часто думаешь что я тебе вру, когда я нахваливаю твой внешний вид и тому подобное, но я же общаюсь с тобой не из за внешнего вида, а из-за внутреннего, ты даже не представляешь какая ты красивая и нежная в моих глазах, я даже не знаю какие слова подобрать, что бы полностью описать то, как я тебя вижу, я не умею подбивать умные слова, по этому просто скажу, ты как сакура в японии, ты как запах весны, ты как крылья ангела, ты как куклы блайз, как светло серый кошак на подоконнике, как новая книга с самым интересным сюжетом который останется навсегда в сердце, это прям про тебя, мне нравится твое доверие, но иногда я отвечаю не очень достойно твоему доверию, и это ужасно, я это осознаю и исправляюсь, по крайней мере я пытаюсь, я правда стараюсь, я далеко не идеальна в подобном, но для тебя я буду стараться вдвойне, если тебя будет что то не устраивать - смело говори мне, обсудим, вообще я помню как мы только общаться начали, где 25 марта я тебе скинула в лс скриншот какой то, а до этого мы общались в чат боте, боже, помню как сразу словили угар с той виртухи, бля, а потом как то у нас закрутилось все в лс, и вот мы общаемся уже почти 8 месяцев, 🥹🥹🥹 я в шоке, как быстро бежит время, я вообще не знаю, как мы три месяца(вроде)были в одном чате, и не списывались ни разу, потому что пообщаться с тобой тем вечером оказалось самым моим удачным выбором за последний год так точно, и я рада, что ты каким то образом тоже тогда словила волну, и мы сразу же угарали, вооооот, а еще я помню все свои подарки которые я тебе дарила, каждый с какой то самой уебской подписью, по типу «ячмопидорасдебил» и тп, КХАХВХЧЗАЗАЗ, бляяять, розочки в тг, я хочу блин 101 розу тебе в подарки в телеграмме, это что за дела, хиих, так что да, я очень рада что я с тобой общаюсь, ты стала мне так близка, что когда я иногда задумываюсь над жизнью - я понимаю, что без тебя я уже буду не я, меня прям переполняют эмоции когда я это пишу, я рада твоему дню рождению наверное больше чем ты сама, ей богу, рарара, мне нравится тебя поздравлять и общаться с тобой, по этому, Миланамая я желаю тебе что бы у тебя все было хорошо, что бы ты все еще шла к своим целям, не опускала руки, что бы ты побеждала свою тревожность, что бы каждый твой выбор приносил тебе лишь удачу, что бы ты порой не забывала, что после черной полосы в жизни идет белая, где ты по настоящему будешь счастлива, желаю тебе побольше близких людей в твой круг общения, что бы даже когда ты любишь одиночество - у тебя был человек с которым ты будешь хотеть общаться даже не смотря на это, желаю что бы рядом с тобой были лишь не фальшивые люди, а искрение, которые будут тебя любить такой, какая ты есть, оставайся всегда таким хорошеньким и прекрасным человечком, желаю что бы даже в самый сильный дождь - ты сияла ярче любого солнца, желаю что бы все твои мечты сбывались, что бы выбралась из всех трудностей, ведь ты такого не заслуживаешь, ты заслуживаешь куда больше, ценнее и любимее, я рада что ты есть в моей жизни, без тебя - она теряет какие либо краски в моих глазах и в моей душе, спасибо что ты есть, с днем рождения, родная
+            </div>
+        </div>
+        <a class="back-link" onclick="playClickAndShow('slide1'); event.stopPropagation();" style="pointer-events: auto; z-index: 20; position: relative;">вернуться назад -`♡´-</a>
+    </div>
+
+    <script src="https://lib.youware.com/youware-lib-consumer.1756473351.js" id="yourware-lib"></script><script>
+        // 背景音乐控制
+        const bgMusic = document.getElementById('backgroundMusic');
+        const clickSound = document.getElementById('clickSound');
+        const toggleMusicBtn = document.getElementById('toggleMusic');
+        let isMusicPlaying = false;
+
+        // 尝试自动播放（可能会被浏览器阻止）
+        document.addEventListener('click', function() {
+            if (!isMusicPlaying) {
+                playBackgroundMusic();
+            }
+        }, { once: true });
+
+        // 音乐控制按钮
+        toggleMusicBtn.addEventListener('click', function() {
+            if (isMusicPlaying) {
+                pauseBackgroundMusic();
+            } else {
+                playBackgroundMusic();
+            }
+        });
+
+        function playBackgroundMusic() {
+            bgMusic.play()
+                .then(() => {
+                    isMusicPlaying = true;
+                    toggleMusicBtn.textContent = "🎵";
+                    toggleMusicBtn.style.color = "#ff69b4";
+                })
+                .catch(error => {
+                    console.log("Auto-play prevented by browser:", error);
+                });
+        }
+
+        function pauseBackgroundMusic() {
+            bgMusic.pause();
+            isMusicPlaying = false;
+            toggleMusicBtn.textContent = "🔇";
+            toggleMusicBtn.style.color = "#999";
+        }
+
+        // 播放点击音效并切换幻灯片
+        function playClickAndShow(slideId) {
+            // 播放点击音效
+            clickSound.currentTime = 0;
+            clickSound.play()
+                .catch(error => {
+                    console.log("Click sound play prevented:", error);
+                });
+            
+            // 切换幻灯片
+            showSlide(slideId);
+        }
+
+        function showSlide(slideId) {
+            // 隐藏所有幻灯片
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // 显示选定的幻灯片
+            document.getElementById(slideId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
