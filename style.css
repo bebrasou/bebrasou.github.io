@@ -46,7 +46,6 @@ h2 {
     font-weight: 590;
     color: rgba(0, 4, 249, 0.774);
     cursor: pointer;
-
 }
 
 .container a:hover {
@@ -54,7 +53,7 @@ h2 {
 }
 
 #girls {
-    color: deeppink; !important;
+    color: deeppink !important;
 }
 
 table {
@@ -85,28 +84,6 @@ td {
 .infoRow {
     background-color: rgb(166, 166, 166);
     font-weight: bold;
-}
-
-.noneRow {
-    background-color: black;
-    color: white;
-}
-
-tr.highlight {
-    background-color: rgb(109, 216, 252) !important;
-}
-
-.asyncRow {
-    background-color: rgb(255, 0, 0);
-}
-
-.asyncRow a {
-    font-weight: 400;
-    color: black;
-}
-
-.dontKnownRow {
-    background-color: rgb(255, 208, 0);
 }
 
 #clock {
@@ -192,12 +169,12 @@ tr.highlight {
 }
 
 .popup {
-    display: none; /* скрыт по умолчанию */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.1); /* прозрачный фон */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(60px);
     border: 1px solid black;
     border-radius: 10px;
@@ -217,7 +194,7 @@ tr.highlight {
 }
 
 #popup button {
-    background: rgba(255, 255, 255, 0.2); /* прозрачный фон */
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(60px);
     border: 1px solid black;
     border-radius: 6px;
