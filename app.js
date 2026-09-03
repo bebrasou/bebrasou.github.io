@@ -2,10 +2,10 @@ const subjectLinks = {
     "Укр. мова": "https://meet.google.com/cii-xqag-hhd" ,
     "Укр. літ": "https://meet.google.com/cii-xqag-hhd" ,
     "Географія": "https://meet.google.com/brv-qerv-atw" ,
-    "Історія України": "https://meet.google.com/nrt-ydnw-shy",
+    "Історія України": "https://meet.google.com/wit-yyxk-mue" ,
     "Фіз-ра": "https://meet.google.com/pps-zkvd-ufp" ,
     "Біологія": "https://meet.google.com/bva-cfqi-fmi" ,
-    "Громад. освіта": "https://meet.google.com/nrt-ydnw-shy",
+    "Громад. освіта": "https://meet.google.com/wit-yyxk-mue" ,
     "Алгебра": "https://meet.google.com/wrd-kquk-icm" ,
     "Фізика": "https://meet.google.com/yyc-mdsj-uff" ,
     "Мистецтво": "https://meet.google.com/oqv-tuzj-fka",
@@ -13,7 +13,7 @@ const subjectLinks = {
     "Англійська": "https://meet.google.com/dhz-riko-mkf" ,
     "Геометрія": "https://meet.google.com/wrd-kquk-icm" ,
     "Хімія": "https://meet.google.com/xfx-scnb-rqt" ,
-    "Всесвіт. історія": "https://meet.google.com/nrt-ydnw-shy",
+    "Всесвіт. історія": "https://meet.google.com/wit-yyxk-mue" ,
     "Заруб. літ": "https://meet.google.com/rms-jhiy-rsm" ,
     "Астрономія": "https://meet.google.com/yyc-mdsj-uff"
 };
