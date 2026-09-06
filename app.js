@@ -8,7 +8,7 @@ const subjectLinks = {
     "Громад. освіта": "https://meet.google.com/wit-yyxk-mue" ,
     "Алгебра": "https://meet.google.com/wrd-kquk-icm" ,
     "Фізика": "https://meet.google.com/yyc-mdsj-uff" ,
-    "Мистецтво": "https://meet.google.com/oqv-tuzj-fka",
+    "Мистецтво": "https://meet.google.com/spv-zogy-fdn" ,
     "Інформатика": "https://meet.google.com/weo-tvty-vez",
     "Англійська": "https://meet.google.com/dhz-riko-mkf" ,
     "Геометрія": "https://meet.google.com/wrd-kquk-icm" ,
