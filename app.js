@@ -9,7 +9,7 @@ const subjectLinks = {
     "Алгебра": "https://meet.google.com/wrd-kquk-icm" ,
     "Фізика": "https://meet.google.com/yyc-mdsj-uff" ,
     "Мистецтво": "https://meet.google.com/spv-zogy-fdn" ,
-    "Інформатика": "https://meet.google.com/weo-tvty-vez",
+    "Інформатика": "https://meet.google.com/unw-bkcw-ykh" ,
     "Англійська": "https://meet.google.com/dhz-riko-mkf" ,
     "Геометрія": "https://meet.google.com/wrd-kquk-icm" ,
     "Хімія": "https://meet.google.com/xfx-scnb-rqt" ,
